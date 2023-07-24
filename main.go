@@ -5,7 +5,7 @@ import (
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 
-	_ "https://github.com/anirbanbhat/bookstore_microservice/docs" // This is required to initialize Swagger documentation.
+	_ "github.com/anirbanbhat/bookstore_microservice/docs" // This is required to initialize Swagger documentation.
 
 	echoSwagger "github.com/swaggo/echo-swagger"
 )
