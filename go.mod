@@ -1,6 +1,6 @@
-module github.com/your-username/bookstore_microservice
+module github.com/anirbanbhat/bookstore_microservice
 
-go 1.17
+go 1.20
 
 require (
 	github.com/labstack/echo/v4 v4.11.1

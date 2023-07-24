@@ -1,12 +1,13 @@
 package main
 
 import (
+	"github.com/anirbanbhat/bookstore_microservice/api/handlers"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
-	"github.com/your-username/bookstore_microservice/api/handlers"
+
+	_ "https://github.com/anirbanbhat/bookstore_microservice/docs" // This is required to initialize Swagger documentation.
 
 	echoSwagger "github.com/swaggo/echo-swagger"
-	_ "github.com/your-username/bookstore_microservice/docs" // This is required to initialize Swagger documentation.
 )
 
 // @title Bookstore Microservice API
