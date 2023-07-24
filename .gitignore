@@ -1,0 +1,36 @@
+# Compiled binary files
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Go binary files and build artifacts
+/bin/
+/obj/
+/vendor/
+/vendor.json
+
+# System and editor-specific files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Log files and temporary files
+/log/
+/tmp/
+
+# Environment-specific configuration files
+/config.yaml
+/config.json
+/config.ini
+
+# Dependency files
+go.sum
+
+# Automatically generated files
+/swagger/*
+
+# Ignore any sensitive or private files
+secret.txt
