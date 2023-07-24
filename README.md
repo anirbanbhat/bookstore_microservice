@@ -7,6 +7,11 @@ The Bookstore Microservice is a Go application that exposes RESTful APIs to mana
 - [How to Run](#how-to-run)
   - [Standalone](#standalone)
   - [Docker Container](#docker-container)
+- [APIs](#apis)
+  - [List all books](#list-all-books)
+  - [Get details of a specific book](#get-details-of-a-specific-book)
+  - [Add a new book](#add-a-new-book)
+- [Sample Input-Output](#sample-input-output)
 
 ## Dependencies
 
@@ -85,3 +90,85 @@ To run the application as a Docker container, ensure you have Docker installed a
 
 5. The Bookstore Microservice will now be running in a Docker container at `http://localhost:8080`.
 
+## APIs
+
+### List all books
+
+- **Endpoint:** `GET /books`
+- **Description:** Returns a list of all books in the bookstore.
+- **Response Status Code:** 200 (OK)
+- **Response Body:**
+  ```json
+  [
+    {
+      "id": 1,
+      "title": "Book One",
+      "author": "Author One",
+      "publishedYear": 2021
+    },
+    {
+      "id": 2,
+      "title": "Book Two",
+      "author": "Author Two",
+      "publishedYear": 2022
+    },
+    ...
+  ]
+  ```
+
+### Get details of a specific book
+
+- **Endpoint:** `GET /books/{id}`
+- **Description:** Returns details of a specific book.
+- **Request Parameter:** `id` (integer) - The ID of the book to retrieve details for.
+- **Response Status Code:** 200 (OK)
+- **Response Body (Example for ID=1):**
+  ```json
+  {
+    "id": 1,
+    "title": "Book One",
+    "author": "Author One",
+    "publishedYear": 2021
+  }
+  ```
+
+- **Response Status Code:** 404 (Not Found)
+- **Response Body (Example for non-existent ID=100):**
+  ```json
+  {
+    "error": "Book not found"
+  }
+  ```
+
+### Add a new book
+
+- **Endpoint:** `POST /books`
+- **Description:** Adds a new book with the provided details.
+- **Request Body:**
+  ```json
+  {
+    "title": "New Book",
+    "author": "New Author",
+    "publishedYear": 2023
+  }
+  ```
+- **Response Status Code:** 201 (Created)
+- **Response Body:**
+  ```json
+  {
+    "id": 3,
+    "title": "New Book",
+    "author": "New Author",
+    "publishedYear": 2023
+  }
+  ```
+
+- **Response Status Code:** 400 (Bad Request)
+- **Response Body (Example for missing title in request body):**
+  ```json
+  {
+    "error": "Title is required"
+  }
+  ```
+
+---
